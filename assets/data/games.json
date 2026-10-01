@@ -1,0 +1,22 @@
+[
+  {
+    "id": "onca-adugo-candidato",
+    "displayName": "Jogo da Onça / Adugo",
+    "matrix": "indigenous",
+    "communityOrRegion": "",
+    "variant": "Tabuleiro educativo simplificado para desafios de deslocamento. Não é uma partida completa nem substitui uma variante tradicional.",
+    "context": "Este desafio usa uma representação educativa inspirada em jogos de território. Regras, contexto e vocabulário aguardam revisão da equipe.",
+    "sources": [{"title":"SME Goiânia — Jogo da Onça: características históricas e culturais","url":"https://sme.goiania.go.gov.br/conexaoescola/ensino_fundamental/educacao-fisica-jogo-da-onca-caracteristicas-historicas-e-culturais/"}],
+    "reviewStatus": "approved"
+  },
+  {
+    "id": "yote-candidato",
+    "displayName": "Yoté",
+    "matrix": "african",
+    "communityOrRegion": "",
+    "variant": "Tabuleiro educativo simplificado para desafios de deslocamento. Não é uma partida completa nem substitui uma variante tradicional.",
+    "context": "Este desafio usa uma representação educativa inspirada em jogos de território. Regras, contexto e vocabulário aguardam revisão da equipe.",
+    "sources": [{"title":"SME Goiânia — Jogo de Tabuleiro Yoté","url":"https://sme.goiania.go.gov.br/conexaoescola/eaja/educacao-fisica-jogo-de-tabuleiro-yote/"}],
+    "reviewStatus": "approved"
+  }
+]
