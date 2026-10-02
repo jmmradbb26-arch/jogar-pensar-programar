@@ -56,10 +56,12 @@ test("analisar referencia comando problemático e aceita solução corrigida",()
   assert.equal(result.error.index,1); assert.equal(evaluateAnalysisChoice(challenge,problematic,result),true);
   assert.equal(evaluateAnalysisChoice(challenge,wrong,result),false);
   assert.equal(evaluateSequence(challenge,challenge.testCases.valid).status,"success");
-  const observed=challenge.analysisChoices.find(c=>c.target.kind==="outcome"&&c.correct);
-  const wrongOutcome=challenge.analysisChoices.find(c=>c.target.kind==="outcome"&&!c.correct);
-  assert.equal(evaluateAnalysisChoice(challenge,observed,result),true);
-  assert.equal(evaluateAnalysisChoice(challenge,wrongOutcome,result),false);
+  assert.ok(challenge.analysisChoices.every(c=>c.target.kind==="command"));
+  assert.equal(challenge.instructions,"Observe a sequência e escolha o comando que interrompe o caminho.");
+  assert.doesNotMatch(appSource,/Ou escolha um resultado observado/);
+  assert.match(appSource,/Tentar novamente/);
+  assert.match(appSource,/Ver.*sequência e resultado/);
+  assert.match(appSource,/interrompe o caminho porque/);
   assert.match(analysisFeedback(challenge,false,2).text,/veja/i);
 });
 
@@ -126,6 +128,6 @@ test("offline bootstrap registers root scope and confirms control before cache r
   assert.match(appSource,/scope:new URL\("\.\.\/\.\.\/",import\.meta\.url\)\.pathname/);
   assert.match(serviceWorkerSource,/await self\.skipWaiting\(\)/);
   assert.match(serviceWorkerSource,/await self\.clients\.claim\(\)/);
-  assert.match(serviceWorkerSource,/CACHE_NAME="jogar-pensar-programar-v5"/);
+  assert.match(serviceWorkerSource,/CACHE_NAME="jogar-pensar-programar-v6"/);
   assert.match(serviceWorkerSource,/\.\/assets\/js\/offline-control\.mjs/);
 });

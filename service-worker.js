@@ -1,4 +1,4 @@
-const CACHE_NAME="jogar-pensar-programar-v5";
+const CACHE_NAME="jogar-pensar-programar-v6";
 const CORE=["./","./index.html","./assets/css/app.css","./assets/js/app.mjs","./assets/js/board.mjs","./assets/js/sequence.mjs","./assets/js/feedback.mjs","./assets/js/progression.mjs","./assets/js/offline-control.mjs","./assets/data/games.json","./assets/data/challenges.json"];
 
 self.addEventListener("install",event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE_NAME);await cache.addAll(CORE.map(path=>new URL(path,self.registration.scope).href));await self.skipWaiting();})()));
